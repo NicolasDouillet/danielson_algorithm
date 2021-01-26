@@ -1,33 +1,33 @@
-%% Danielson
+%% danielson
 %
-% Algorithm to compute the discrete distance map on a 2D image.
+% Algorithm to compute the discrete distance map on a binary image.
 %
-% Author and support : nicolas.douillet (at) free.fr, 2005-2019.
+% Author and support : nicolas.douillet (at) free.fr, 2005-2021.
 % 
 %% Syntax
 %
-% - Danielson(img_flnm);
+% - danielson(img_flnm);
 %
-% - Danielson(img_flnm, option_display);
+% - danielson(img_flnm, option_display);
 %
-% - Danielson(img_flnm, option_display, threshold);
+% - danielson(img_flnm, option_display, threshold);
 %
-% - D = Danielson(img_flnm, option_display, threshold);
+% - D = danielson(img_flnm, option_display, threshold);
 %
 %% Description
 %
-% - Danielson(img_flnm) reads the image img_flnm, thresholds it at level
+% - danielson(img_flnm) reads the image img_flnm, thresholds it at level
 % 0.5 by default if it is not already a binary image, computes the distance map,
 % and displays it.
 %
-% - Danielson(img_flnm, option_display) displays it when option_display is
+% - danielson(img_flnm, option_display) displays it when option_display is
 % either logical *true or numeric *1, and doesn't when it is either logical false
 % or numeric 0.
 %
-% - Danielson(img_flnm, option_display, threshold) uses the threshold value
+% - danielson(img_flnm, option_display, threshold) uses the threshold value
 % to binarize the image.
 %
-% - D = Danielson(img_flnm, option_display, threshold) stores the resulting
+% - D = danielson(img_flnm, option_display, threshold) stores the resulting
 % distance map in D. 
 %
 %% See also
@@ -49,5 +49,7 @@
 %       size(D) = [H,W] with H the height of the image, and W the width, in pixels unit.
 %
 %% Example
-
-Danielson('disks_cloud.jpg',true);
+I = imread('disks_cloud.jpg');
+image(I);   
+axis equal, axis tight, axis off;
+danielson('disks_cloud.jpg',true);
